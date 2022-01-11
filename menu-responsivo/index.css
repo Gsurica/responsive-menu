@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;		
+}
+header {
+    background-color: rgb(10, 74, 95);
+}
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-template-rows: auto auto;
+    transition: all 0.3s;
+}
+nav #menu {
+    display: none;
+    transition: all 0.3s;
+}
+nav #menu:checked ~ ul {
+    display: grid;
+}
+nav .menu {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 10px;
+    background-color: rgb(10, 74, 95);
+    cursor: pointer;
+    justify-self: end;
+    transition: all 0.3s;
+}
+nav .menu:hover {
+    background-color: #000;
+    border-radius: 10px;
+}
+nav ul {
+    display: none;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    grid-gap: 10px;
+    transition: all 0.3s;
+}
+nav ul li a {
+    display: block;
+    background-color: rgb(10, 74, 95);
+    padding: 10px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+}
+nav ul li a:hover {
+    background-color: #000;
+    border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+    nav .menu {
+        display: none;
+    }
+    nav {
+        grid-template-columns: 30%;
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 0;
+    }
+}
